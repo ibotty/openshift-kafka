@@ -1,4 +1,4 @@
-FROM jboss/base-jdk:7
+FROM jboss/base-jdk:8
 
 MAINTAINER Tobias Florek <tob@butter.sh>
 
