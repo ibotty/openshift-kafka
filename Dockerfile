@@ -11,7 +11,7 @@ EXPOSE 2181 2888 3888
 
 RUN curl -L ${KAFKA_URL} \
        | tar xz -C /opt \
-    && yum install -y gettext $$ yum clean all \
+    && yum install -y gettext iproute && yum clean all \
     && mv /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka \
     && mkdir -p /opt/kafka/logs
 
