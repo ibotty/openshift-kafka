@@ -15,6 +15,11 @@ function iptoid() {
 export MY_IP=$(ip a show dev eth0 | awk '/ inet / {print $2}' | cut -d/ -f1)
 export SERVER_ID=$(iptoid $MY_IP)
 
+export NUM_NET_THREADS=${NUM_NET_THREADS-3}
+export NUM_IO_THREADS=${NUM_IO_THREADS-8}
+export LOG_DIRS=${LOG_DIRS-/opt/kafka/logs}
+export NUM_PARTITIONS=${NUM_PARTITIONS-2}
+
 echo "Starting kafka broker with the following config:"
 echo "ZOOKEEPER_URLS: $ZOOKEEPER_URLS"
 echo "MY_IP: $MY_IP"
